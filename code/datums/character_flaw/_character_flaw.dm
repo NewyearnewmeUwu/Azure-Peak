@@ -822,7 +822,7 @@ GLOBAL_LIST_INIT(averse_factions, list(
 
 /datum/charflaw/prudish
 	name = "Prudish"
-	desc = "I hate being around naked people."
+	desc = "I hate being around people who don't wear clothes or use bad language."
 	var/is_active = FALSE
 	var/check_interval = 15 SECONDS
 	var/next_check = 0

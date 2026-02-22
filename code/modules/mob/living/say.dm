@@ -514,7 +514,14 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			var/name_to_highlight = H.nickname
 			if(name_to_highlight && name_to_highlight != "" && name_to_highlight != "Please Change Me")	//We don't need to highlight an unset or blank one.
 				highlighted_message = replacetext_char(message, name_to_highlight, "<b><font color = #[H.highlight_color]>[name_to_highlight]</font></b>")
-
+			if(H.has_flaw(/datum/charflaw/prudish) && !H.has_stress_event(/datum/stressevent/bad_words))
+				if(H.patron)
+					var/evidence = sanitize_hear_message(message)
+					var/list/naughtylist = H.patron.profane_words.Copy()
+					for(var/profanity in naughtylist)
+						var/regex/cussjar = regex("([profanity])", "im")
+						if(cussjar.Find(evidence))
+							H.add_stress(/datum/stressevent/bad_words)
 			if(H != src && message_mode != MODE_WHISPER && H.has_flaw(/datum/charflaw/addiction/clamorous))
 				var/chance = 5
 				if(Zs_yell)
