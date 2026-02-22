@@ -182,7 +182,7 @@
 
 /datum/stressevent/prude
 	timer = 5 MINUTES
-	stressadd = 2
+	stressadd = 1
 	desc = span_red("Why are they naked..?")
 
 /datum/stressevent/bad_words
