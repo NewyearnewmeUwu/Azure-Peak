@@ -833,14 +833,10 @@ GLOBAL_LIST_INIT(averse_factions, list(
 		next_check = world.time + check_interval
 		if(user.has_stress_event(/datum/stressevent/prude))
 			return
-		var/count = 0
 		for(var/mob/living/L in get_hearers_in_LOS(check_range, user, RECURSIVE_CONTENTS_CLIENT_MOBS))
 			if(check_prude(user, L))
-				count++
-				if(count > 0)
-					user.add_stress(/datum/stressevent/prude)
-					break
-
+				user.add_stress(/datum/stressevent/prude)
+				break
 
 /datum/charflaw/prudish/proc/check_prude(mob/user, mob/target)
 	if(target == user || target.stat == DEAD)
