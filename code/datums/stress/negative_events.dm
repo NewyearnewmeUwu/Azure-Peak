@@ -180,6 +180,11 @@
 	stressadd = 5
 	desc = span_red("<u>They</u> are here.")
 
+/datum/stressevent/prude
+	timer = 5 MINUTES
+	stressadd = 5
+	desc = span_red("Why are they naked..?")
+
 /datum/stressevent/nocrowd
 	timer = 2 MINUTES
 	stressadd = 3
