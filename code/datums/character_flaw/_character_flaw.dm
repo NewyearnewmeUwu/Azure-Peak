@@ -654,6 +654,7 @@ GLOBAL_LIST_INIT(averse_factions, list(
 	insane_fool.adjust_triumphs(1)
 	if(insane_fool.patron?.type == /datum/patron/divine/abyssor) 
 	 insane_fool.grant_language(/datum/language/abyssal)
+	insane_fool.playsound_local(get_turf(insane_fool), 'sound/music/maniac.ogg', 80, FALSE, pressure_affected = FALSE)
 
 /datum/charflaw/indebted
 	name = "Indebted"
