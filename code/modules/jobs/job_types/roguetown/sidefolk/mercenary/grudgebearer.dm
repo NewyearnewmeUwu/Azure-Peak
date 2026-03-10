@@ -105,7 +105,6 @@
 			/obj/item/roguekey/mercenary,
 			/obj/item/storage/belt/rogue/pouch/coins/poor,
 			/obj/item/rogueweapon/hammer/iron,
-			/obj/item/paper/scroll/grudge,
 			/obj/item/natural/feather,
 			)
 		if(H.mind)
